@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provincias de la República Dominicana</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        async function fetchweather(city) {
+  try {
+    const response = await axios.get("http://api.weatherapi.com/v1/current.json", {
+      params: {
+        key: "56eabba0c52d4590a92232747240612",
+        q: city,
+        aqi: "yes"
+      }
+    });
+
+    console.log(response.data);
+  } catch (error) {
+    console.error("Error al obtener los datos del clima:", error);
+  }
+}
+
+// Asigna la función al objeto window para que esté disponible globalmente
+window.fetchweather = fetchweather;
+
+    </script>
+
+</head>
+<body>
+    <main>
+        <h1 id="main_text">The weather of  <%= country %> </h1>
+        <%- include('partials/buttons') %>
+       
+    </main>
+
+    
+</body>
+</html>
