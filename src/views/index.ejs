@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Provincias de la República Dominicana</title>
+
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
 
-        async function fetchweather(city) {
+        async function fetchweather(city ="dominican republic santiago") {
   try {
     const response = await axios.get("http://api.weatherapi.com/v1/current.json", {
       params: {
@@ -18,16 +20,32 @@
       }
     });
 
+
+
     console.log(response.data);
+    document.getElementById('weather_info').innerHTML = `
+                    <p><strong>City:</strong> ${response.data.location.name}</p>
+                    <p><strong>Temperature:</strong> ${response.data.current.temp_c} °C</p>
+                    <p><strong>Condition:</strong> ${response.data.current.condition.text}</p>
+                    <p><strong>Wind speed kph:   </strong>${response.data.current.wind_kph}<p>
+
+                    <img src="${response.data.current.condition.icon}" alt="Ícono del clima">`
+
+
+    
   } catch (error) {
     console.error("Error al obtener los datos del clima:", error);
   }
 }
 
-// Asigna la función al objeto window para que esté disponible globalmente
 window.fetchweather = fetchweather;
+fetchweather()
 
-    </script>
+</script>
+
+
+
+
 
 </head>
 <body>
@@ -36,6 +54,13 @@ window.fetchweather = fetchweather;
         <%- include('partials/buttons') %>
        
     </main>
+
+    <div id="weather_info">
+
+    </div>
+
+      <a href="https://www.windy.com/?19.204,-69.752,8,m:ecraedK"><h2 class="h2">Use windy for more information</h2></a>
+    </div>
 
     
 </body>
