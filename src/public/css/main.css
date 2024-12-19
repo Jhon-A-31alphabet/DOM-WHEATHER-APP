@@ -1,5 +1,4 @@
 
-
 body{
     background-color: white;
 }
@@ -12,23 +11,16 @@ h1{
     margin-top: 50px;
 }
 
-
-
-
-h4{
-    
-    color: black;
-    border: solid black 5px;
-    border-radius: 10px;
-    padding: 10px 20px;
-    display: inline-block;
-    text-align: center;
+footer {
+    color: white;
     text-decoration: none;
-    transition: background-color 0.3s, border-color 0.3s; 
-
+    background-color:black; 
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
 }
 
-h4:hover{
+head{
     background-color: black;
-    color: white;
 }

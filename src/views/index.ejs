@@ -10,45 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/css/main.css">
-    
-    
-    <script>
-
-        async function fetchweather(city ="dominican republic santiago") {
-  try {
-    const response = await axios.get("http://api.weatherapi.com/v1/current.json", {
-      params: {
-        key: "56eabba0c52d4590a92232747240612",
-        q: city,
-        aqi: "yes"
-      }
-    });
-
-
-
-    console.log(response.data);
-    document.getElementById('weather_info').innerHTML = `
-                    <p><strong>City:</strong> ${response.data.location.name}</p>
-                    <p ><strong>Temperature:</strong> ${response.data.current.temp_c} °C</p>
-                    <p><strong>Condition:</strong> ${response.data.current.condition.text}</p>
-                    <p><strong>Wind speed kph:   </strong>${response.data.current.wind_kph}<p>
-
-                    <img src="${response.data.current.condition.icon}" alt="weather icon">`
-
 
     
-  } catch (error) {
-    console.error("the error is :", error);
-  }
-}
-
-window.fetchweather = fetchweather;
-fetchweather()
-
-</script>
-
-
-
 
 
 </head>
@@ -66,12 +29,23 @@ fetchweather()
     <div id="weather_info">
 
 
-    </div>
-      <a href="https://www.windy.com/?19.204,-69.752,8,m:ecraedK"><h4>Use windy for more information</h4></a>
-    </div>
     </center>
-   
 
-    
+
+
+    <footer>
+      <p>&copy; 2024 Todos los derechos reservados.</p>
+      
+      <div>
+        <ul>
+      <li><p>Github</p></li>
+      <li><p>Linkedin</p></li>
+        </ul>
+      </div>
+  </footer>
+
+  <script src="/js/index.js"></script>
+
 </body>
+
 </html>
