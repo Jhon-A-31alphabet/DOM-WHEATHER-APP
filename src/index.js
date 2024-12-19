@@ -2,11 +2,12 @@ import express from "express";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import indexRoutes from "./routes/routes.js"; 
-
+import dotenv from "dotenv"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+dotenv.config();
 const app = express();
 
 app.use(express.static('public', {
@@ -27,8 +28,6 @@ app.set("view engine", "ejs");
 app.use(indexRoutes);
 
 // Run server
-
-
 app.listen(app.get("port"), () => {
   console.log(`Server running on =>  http://localhost:${app.get("port")}`);
 });
