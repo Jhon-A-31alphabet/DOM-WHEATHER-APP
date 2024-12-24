@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "��#\u0000 \u0000D\u0000O\u0000M\u0000-\u0000W\u0000H\u0000E\u0000A\u0000T\u0000H\u0000E\u0000R\u0000-\u0000A\u0000P\u0000P\u0000\r\u0000 \u0000",
   "dependencies": {
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
@@ -20,7 +20,7 @@
     "vercel": "^39.2.2"
   },
   "devDependencies": {
-  "nodemon": "^3.1.7"
-},
+    "nodemon": "^3.1.7"
+  },
   "type": "module"
 }

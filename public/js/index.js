@@ -1,6 +1,6 @@
 async function fetchweather(city = "dominican republic santiago") {
   try {
-    const response = await axios.get("http://api.weatherapi.com/v1/current.json", {
+    const response = await axios.get("https://api.weatherapi.com/v1/current.json", {
       params: {
         key: "56eabba0c52d4590a92232747240612",
         q: city,
