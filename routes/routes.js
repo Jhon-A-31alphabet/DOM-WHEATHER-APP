@@ -4,6 +4,8 @@ import { Router } from "express";
 
 const router = Router();
 
+
+
 router.get("/",(req,res)=> {
 
     res.render("index",{country:"DOM"})
@@ -16,6 +18,10 @@ router.get("/windy",(req,res)=>{
 
 router.get("/:another",(req,res)=>{
     res.redirect("/");
+})
+
+router.get("/isAlive",(req,res)=>{
+    res.redirect('/');
 })
 
 export default router;
