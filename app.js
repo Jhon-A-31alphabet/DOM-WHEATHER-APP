@@ -18,6 +18,7 @@ app.use(express.static('public', {
     }
 }));
 
+
 app.set("port", process.env.PORT || 3000);
 
 app.set("views", join(__dirname, "views")); 

@@ -1,3 +1,4 @@
+
 async function fetchweather(city = "dominican republic santiago") {
   try {
     const response = await axios.get("https://api.weatherapi.com/v1/current.json", {
@@ -36,7 +37,12 @@ async function fetchweather(city = "dominican republic santiago") {
 
     document.getElementById('weather_info').innerHTML = `
       <h3><strong>Ciudad:</strong> ${response.data.location.name}</h3>
+      <h3><strong>Hora  y fecha local :</strong> ${response.data.location.localtime}</h3>
+
+
       <h3><strong>Temperatura:</strong> ${response.data.current.temp_c} °C</h3>
+      <h3><strong>Sensacion Termica:</strong> ${response.data.current.feelslike_c} °C</h3>
+
       <h3><strong>Condición:</strong> ${condicionTraducida}</h3>
       <h3><strong>Velocidad del viento (km/h):</strong> ${response.data.current.wind_kph}</h3>
       <img src="${response.data.current.condition.icon}" alt="Icono del clima">
